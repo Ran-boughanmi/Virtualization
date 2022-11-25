@@ -20,6 +20,7 @@ jobs:
       uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
         token: ${{ secrets.DOCKER_ACESS }}       
       
     - name: build and Push Docker image
@@ -28,4 +29,5 @@ jobs:
         push: true
         file: ./Dockerfile
         tags: raniaboughanmim/virtualization:1.2
+
 
