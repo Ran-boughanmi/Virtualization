@@ -14,7 +14,7 @@ jobs:
     steps:
 
     - name: ckeckout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
 
     - name: Login to docker hub
       uses: docker/login-action@v1
