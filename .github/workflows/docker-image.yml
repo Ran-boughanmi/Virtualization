@@ -20,9 +20,8 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        file: ./Dockerfile
-        tags: raniaboughanmim/virtualization:1.2
+        tags: raniaboughanmim/virtualization:latest
         username: ${{ secrets.DOCKER_USER }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        password: ${{ secrets.DOCKER_ACESS }}
 
 
