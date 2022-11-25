@@ -16,10 +16,10 @@ jobs:
       - name: Login
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          - name: build and Push 
-      uses: docker/build-push-action@v2
-      with:
-        push: true
-        tags: raniaboughanmim/virtualization:1.0
+         username: ${{ secrets.DOCKER_USER }}
+         password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: build and Push 
+        uses: docker/build-push-action@v2
+        with:
+         push: true
+         tags: raniaboughanmim/virtualization:1.0
