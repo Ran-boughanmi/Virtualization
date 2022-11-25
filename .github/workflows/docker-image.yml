@@ -1,0 +1,26 @@
+name: Docker_Image CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Log in to Docker Hub
+        uses: docker/raniaboughanmim/virtualisation
+        with:
+          python-version: '3.x'
+
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build the Docker image 
+        run: docker build . --file Dockefile --tag OumaimaNijaoui/Oumaima_virtualisation:${GITHUB_SHA::8}
+
+      - name: Push Docker Image to Docker Hub
+        run: docker push ${{ secrets.DOCKER_USERNAME}}/raniaboughanmim/virtualisation:${GITHUB_SHA::8}
