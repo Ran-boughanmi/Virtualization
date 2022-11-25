@@ -24,5 +24,6 @@ jobs:
         push: true
         image: raniaboughanmim/virtualization
         registry: docker.io
+        tags: raniaboughanmim/virtualization:1.2
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASSWORD }}
