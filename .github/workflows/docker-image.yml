@@ -25,4 +25,4 @@ jobs:
         file: ./Dockerfile
         tags: raniaboughanmim/virtualization:1.2
         username: ${{ secrets.DOCKER_USER }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        password: ${{ secrets.DOCKER_ACESS }}
