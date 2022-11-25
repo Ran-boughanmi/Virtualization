@@ -21,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Build the Docker image 
-        run: docker build . --file ./virtualization/Dockefile --tag raniaboughanmim/virtualisation:${GITHUB_SHA::8}
+        run: docker build . --file Dockefile --tag raniaboughanmim/virtualisation:$(date +%s)
 
       - name: Push Docker Image to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME}}/raniaboughanmim/virtualisation:${GITHUB_SHA::8}
