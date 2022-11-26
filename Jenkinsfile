@@ -17,7 +17,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                
-                sh 'docker build -t raniaboughanmim/virtualization:1.3  .'
+                sh 'docker build -t raniaboughanmim/virtualization:2.1 . '
             }
         }
 
@@ -26,10 +26,9 @@ pipeline {
         stage('Push Image'){
             steps{
                 script{
-                    withCredentials([string(credentialsId: 'docker_hub_id', variable: 'docker_hub_pwd')]) {
-                        sh ' docker login -u raniaboughanmim -p ${docker_hub_pwd}'
-                        sh ' docker tag devopsjenkins:latest  raniaboughanmim/virtualization:1.3'
-                        sh'docker push  raniaboughanmim/virtualization:1.3 '
+                    withCredentials([string(credentialsId: 'docker-hub-id', variable: 'docker-hub-pwd')]) {
+                        sh ' docker login -u raniaboughanmim -p ${docker-hub-pwd}'
+                        sh'docker push  raniaboughanmim/virtualization:2.3 '
 
 }
                 }
