@@ -29,7 +29,8 @@ pipeline {
                 script{
                     withCredentials([string(credentialsId: 'docker-hub-id', variable: 'dockerhub')]) {
                         sh ' docker login -u raniaboughanmim -p ${dockerhub}'
-                        sh'docker push  raniaboughanmim/virtualization:2.3 '
+                        sh ' docker tag raniaboughanmim/virtualization:2.1  raniaboughanmim/virtualization:2.1'
+                        sh'docker push  raniaboughanmim/virtualization:2.1'
 
 }
                 }
